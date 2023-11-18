@@ -9,11 +9,11 @@ import "fmt"
 
 var (
 	name = "bobby"
-	age = 18
-	ok bool
+	age  = 19
+	ok   bool
 )
 
-func main()  {
+func main() {
 	// var name int
 	// name = 1
 
