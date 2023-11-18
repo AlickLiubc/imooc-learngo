@@ -9,7 +9,7 @@ import "fmt"
 
 var (
 	name = "bobby"
-	age = 18
+	age = 16
 	ok bool
 )
 
