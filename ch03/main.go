@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
 
 func main() {
 	// 长度计算
@@ -18,5 +22,31 @@ func main() {
 
 	// 格式化输出
 	username := "bobby"
-	fmt.Println("用户名：" + username)
+	age := 18
+	address := "北京"
+	mobile := "13800000000"
+	// 及其难维护
+	fmt.Println("用户名：" + username +
+				",年龄：" + strconv.Itoa(age) +
+		        ",地址：" + address +
+		        ",手机号：" + mobile)
+
+	// 较常用，但是性能没有上一个方式好
+	fmt.Printf("用户名：%s,年龄：%d,地址：%s,手机号：%s\r\n", username, age, address, mobile)
+
+	userMsg := fmt.Sprintf("用户名：%T,年龄：%d,地址：%s,手机号：%s\r\n", username, age, address, mobile)
+	fmt.Println(userMsg)
+
+	// 通过string的builder进行字符串拼接，性能比较高
+	var builder strings.Builder
+	builder.WriteString("用户名：")
+	builder.WriteString("username")
+	builder.WriteString(",年龄：")
+	builder.WriteString(strconv.Itoa(age))
+	builder.WriteString(",地址：")
+	builder.WriteString(address)
+
+	re := builder.String()
+
+	fmt.Println(re)
 }
