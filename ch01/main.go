@@ -13,7 +13,7 @@ var (
 	ok bool
 )
 
-func main()  {
+func main() {
 	// var name int
 	// name = 1
 
