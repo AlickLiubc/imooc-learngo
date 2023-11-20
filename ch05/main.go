@@ -43,4 +43,34 @@ func main() {
 	for i := 0; i < len(course1); i++ {
 		fmt.Println(course1[i])
 	}
+
+	course2 := [...]string{"go", "grpc"}
+	course3 := [...]string{"go", "gin"}
+
+	if course2 == course3 {
+		fmt.Println("equal")
+	}
+
+	// 多维数组
+	var courseInfo [3][4]string
+	courseInfo[0] = [4]string{"go", "1h", "bobby", "go体系课"}
+	courseInfo[1] = [4]string{"grpc", "2h", "bobby2", "grpc入门"}
+	courseInfo[2] = [4]string{"gin", "1.5h", "bobby3", "gin高级开发"}
+
+	for i := 0; i < len(courseInfo); i++ {
+		for j := 0; j < len(courseInfo[i]); j++ {
+			fmt.Print(courseInfo[i][j] + "\t")
+		}
+
+		fmt.Println()
+	}
+
+	for _, row := range courseInfo {
+		fmt.Println(row)
+		//for _, column := range row {
+		//	fmt.Print(column + "\t")
+		//}
+		//
+		//fmt.Println()
+	}
 }
