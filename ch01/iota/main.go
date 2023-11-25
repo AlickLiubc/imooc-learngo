@@ -47,6 +47,7 @@ func main() {
 		localName := "local"
 		fmt.Println(localName)
 	}
+	// fmt.Println(localName)
 
 	var mname string
 	if name == "bobby" {
