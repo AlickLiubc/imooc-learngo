@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func a()(int, bool)  {
+func a() (int, bool) {
 	return 0, false
 }
 
@@ -22,16 +22,26 @@ func main() {
 	fmt.Println(mainName)
 
 	const (
-		ERR1 = iota
+		ERR1 = iota + 1
 		//ERR2 = iota
 		//ERR3 = iota
 		//ERR4 = iota
 		ERR2
-		ERR3
-		ERR4
+		ERR25 = "ha" // iota内部仍然会增加计数器
+		ERR3         // iota+1
+		ERR31        // iota+1
+		ERR32        // iota+1
+		ERR33        // iota+1
+		ERR34 = 100
+		ERR4  = iota
 	)
 
-	fmt.Println(ERR1, ERR2, ERR3, ERR4)
+	const (
+		ERRNEW1 = iota
+	)
+
+	fmt.Println(ERR1, ERR2, ERR25, ERR3, ERR4)
+	fmt.Println(ERRNEW1)
 
 	{
 		localName := "local"
