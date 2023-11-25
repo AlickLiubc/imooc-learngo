@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
+	// 运算符 + - * 、 % ++ --
 	var a, b = 1, 3
 	fmt.Println(a + b)
 
@@ -32,4 +33,8 @@ func main()  {
 	var A = 60
 	var B = 13
 	fmt.Println(A & B)
+	// 指针类型
+	// var c *int
+	// 取地址 指针
+	// d := &A
 }
