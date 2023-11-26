@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -63,4 +64,16 @@ func main() {
 	*/
 	// for range key, value
 
+	round := 0
+	for {
+		time.Sleep(1 * time.Second)
+		round++
+		if round == 5 {
+			continue
+		}
+		fmt.Println(round)
+		if round > 10 {
+			break
+		}
+	}
 }
