@@ -37,21 +37,28 @@ func main() {
 
 	// for 循环还有一种用法，for range，主要就是对字符串、数组、切片等
 	/*
-		for key, value := range {
+		for index, value := range {
 
 		}
 	*/
-	name := "imooc go"
-	for key, value := range name {
-		// fmt.Println(key, value)
-		fmt.Printf("%d, %c\r\n", key, value)
+	name := "imooc go体系课"
+	nameRune := []rune(name)
+	//// for index, value := range name {
+	//for _, value := range name {
+	//	// fmt.Println(index, value)
+	//	// fmt.Printf("%d, %c\r\n", index, value)
+	//	fmt.Printf("%c\r\n", value)
+	//}
+	for index, _ := range nameRune {
+		fmt.Printf("%c\r\n", nameRune[index])
 	}
 
 	/*
-		字符串：key代表字符串索引,value是值的拷贝
-		数组
-		切片
-		map
+		字符串：key代表字符串索引, value是值的拷贝
+			   如果不写key，那么返回的是索引
+		数组：
+		切片：
+		map：
 		channel
 	*/
 	// for range key, value
