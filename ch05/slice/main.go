@@ -19,7 +19,7 @@ func main()  {
 	// 1：从数组直接创建
 	// 2：使用string{}
 	// 3：make
-	allCourses := [5]string{"go", "grpc", "gin", "mysql", "elasticsearch"}
+	// allCourses := [5]string{"go", "grpc", "gin", "mysql", "elasticsearch"}
 	//// 左闭右开的区间
 	//courseSlice := allCourses[0:len(allCourses)]
 	//fmt.Println(courseSlice)
@@ -35,7 +35,7 @@ func main()  {
 	//allCourse3[0] = "c"
 
 	// 访问切片的元素，可以单个，也可以多个
-	fmt.Println(allCourses[1])
+	// fmt.Println(allCourses[1])
 
 	// [start:end]
 	/*
@@ -44,7 +44,19 @@ func main()  {
 	3. 如果有start 没有end
 	4. 有start 有end
 	*/
-	fmt.Println(allCourses[:])
-	fmt.Println(allCourses[1:])
-	fmt.Println(allCourses[1:3])
+	//fmt.Println(allCourses[:])
+	//fmt.Println(allCourses[1:])
+	//fmt.Println(allCourses[1:3])
+
+	courseSlice := []string{"go", "grpc"}
+	courseSlice2 := []string{"gin", "mysql", "elasticsearch"}
+
+	// courseSlice = append(courseSlice, courseSlice2...)
+	courseSlice = append(courseSlice, courseSlice2[1:2]...)
+	// courseSlice = append(courseSlice, "gin", "mysql", "elasticsearch")
+	//for _, value := range courseSlice2 {
+	//	courseSlice = append(courseSlice, value)
+	//}
+
+	fmt.Println(courseSlice)
 }
