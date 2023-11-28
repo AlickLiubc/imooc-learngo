@@ -48,15 +48,38 @@ func main()  {
 	//fmt.Println(allCourses[1:])
 	//fmt.Println(allCourses[1:3])
 
-	courseSlice := []string{"go", "grpc"}
-	courseSlice2 := []string{"gin", "mysql", "elasticsearch"}
+	// courseSlice := []string{"go", "grpc"}
+	// courseSlice2 := []string{"gin", "mysql", "elasticsearch"}
 
 	// courseSlice = append(courseSlice, courseSlice2...)
-	courseSlice = append(courseSlice, courseSlice2[1:2]...)
+	// courseSlice = append(courseSlice, courseSlice2[1:2]...)
 	// courseSlice = append(courseSlice, "gin", "mysql", "elasticsearch")
 	//for _, value := range courseSlice2 {
 	//	courseSlice = append(courseSlice, value)
 	//}
 
-	fmt.Println(courseSlice)
+	//fmt.Println(courseSlice)
+
+	// 删除元素
+	courseSlice := []string{"go", "grpc", "mysql", "es", "gin"}
+	mySlice := append(courseSlice[:2], courseSlice[3:]...)
+	fmt.Println(mySlice)
+
+	newSlice := courseSlice[:3]
+	fmt.Println(newSlice)
+
+
+	// 复制
+	// courseSliceCopy := courseSlice
+	courseSliceCopy2 := courseSlice[:]
+
+
+	// var sliceCopy []string
+	courseSliceCopy := make([]string, len(courseSlice))
+	copy(courseSliceCopy, courseSlice)
+
+	courseSlice[0] = "java"
+
+	fmt.Println(courseSliceCopy2)
+	fmt.Println(courseSliceCopy)
 }
