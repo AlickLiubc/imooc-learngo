@@ -30,10 +30,24 @@ func main() {
 	// 2.make(map[string]string, 3)
 	// 3.但是slice可以不初始化
 
-	var m []string
-	if m == nil {
-		fmt.Println("yes")
+	//var m []string
+	//if m == nil {
+	//	fmt.Println("yes")
+	//}
+	//m = append(m, "a")
+	//fmt.Println(m)
+
+	// 遍历
+	//for key,value := range courseMap {
+	//	fmt.Println(key, value)
+	//}
+
+	//for _, value := range courseMap {
+	//	fmt.Println(value)
+	//}
+
+	for key := range courseMap {
+		fmt.Println(key, courseMap[key])
 	}
-	m = append(m, "a")
-	fmt.Println(m)
+
 }
