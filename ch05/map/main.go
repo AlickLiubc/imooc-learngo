@@ -4,11 +4,11 @@ import "fmt"
 
 func main() {
 	//// map是一个key(索引)和value(值)的无序集合，主要是查询方便O(1)
-	//var courseMap = map[string]string{
-	//	"go": "go工程师",
-	//	"grpc": "grpc入门",
-	//	"gin": "gin深入理解",
-	//}
+	var courseMap = map[string]string{
+		"go": "go工程师",
+		"grpc": "grpc入门",
+		"gin": "gin深入理解",
+	}
 	//
 	//// 取值
 	//fmt.Println(courseMap["grpc"])
@@ -20,9 +20,9 @@ func main() {
 
 	// nil，map类型想要设置值必须要先初始化
 	//var courseMap map[string]string{}
-	var courseMap = make(map[string]string, 3)	// make是内置函数，主要用于初始化slice, map, channel
-	courseMap["mysql"] = "mysql的原理"
-	fmt.Println(courseMap)
+	//var courseMap = make(map[string]string, 3)	// make是内置函数，主要用于初始化slice, map, channel
+	//courseMap["mysql"] = "mysql的原理"
+	//fmt.Println(courseMap)
 	// panic: assignment to entry in nil map
 
 	// map必须初始化才能进行使用
@@ -50,4 +50,25 @@ func main() {
 		fmt.Println(key, courseMap[key])
 	}
 	// map是无序的，而且不保证每次打印都是相同的顺序
+
+	//d, ok := courseMap["java"]
+	//if !ok {
+	//	fmt.Println("not in")
+	//} else {
+	//	fmt.Println("find", d)
+	//}
+
+	if _, ok := courseMap["java"]; !ok {
+		fmt.Println("not in")
+	} else {
+		fmt.Println("in")
+	}
+
+	// 删除一个元素
+	delete(courseMap, "grpc")
+	delete(courseMap, "rpc")
+
+	// 很重要提示，map是线程不安全的
+	// var syncMap syc.Map
+	fmt.Println(courseMap)
 }
