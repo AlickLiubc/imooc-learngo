@@ -49,5 +49,5 @@ func main() {
 	for key := range courseMap {
 		fmt.Println(key, courseMap[key])
 	}
-
+	// map是无序的，而且不保证每次打印都是相同的顺序
 }
