@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 函数参数传递的时候，值传递，引用传递，go均使用的是值传递
+// 函数参数传递的时候，值传递，引用传递，go均使用的是值传递 指针
 func add(a, b int) (int, error) {
 	a = 3
 	return a + b, nil
