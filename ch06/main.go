@@ -1,11 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // 函数参数传递的时候，值传递，引用传递，go均使用的是值传递 指针
-func add(a, b int) (int, error) {
-	a = 3
-	return a + b, nil
+//func add(a, b int) (sum int, err error) {
+func add(desc string, items ...int) (sum int, err error) {
+	// var datas [...]string
+	// a = 3
+	// sum = a + b
+	for _, value := range items {
+		sum += value
+	}
+
+	return sum, err
+}
+
+// 省略号
+
+
+func funForever() {
+	for {
+		time.Sleep(time.Second)
+		fmt.Println("doing")
+	}
 }
 
 func main() {
@@ -18,7 +38,7 @@ func main() {
 	*/
 	a := 1
 	b := 2
-	sum, _ := add(a, b)
+	sum, _ := add(a, b, 3, 4)
 
 	fmt.Println(sum)
 }
