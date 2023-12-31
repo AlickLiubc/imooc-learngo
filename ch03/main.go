@@ -8,8 +8,9 @@ import (
 
 func main() {
 	// 长度计算
-	// 如果你想指定一个字符串(中文)长度，如果你只有英文，这个时候直接len
+	// 如果你想知道一个字符串(中文)长度，如果你只有英文，这个时候直接len
 	name := "imooc体系课学习"
+	// bytes := []byte(name)
 	bytes := []rune(name)
 	fmt.Println(len(bytes))
 
