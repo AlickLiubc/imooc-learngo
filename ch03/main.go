@@ -15,6 +15,7 @@ func main() {
 	fmt.Println(len(bytes))
 
 	// 转义符
+	// courseName := "go\"体系课\""
 	courseName := `go"体系课"`
 	fmt.Println(courseName)
 
@@ -28,9 +29,9 @@ func main() {
 	mobile := "13800000000"
 	// 及其难维护
 	fmt.Println("用户名：" + username +
-				",年龄：" + strconv.Itoa(age) +
-		        ",地址：" + address +
-		        ",手机号：" + mobile)
+		",年龄：" + strconv.Itoa(age) +
+		",地址：" + address +
+		",手机号：" + mobile)
 
 	// 较常用，但是性能没有上一个方式好
 	fmt.Printf("用户名：%s,年龄：%d,地址：%s,手机号：%s\r\n", username, age, address, mobile)
