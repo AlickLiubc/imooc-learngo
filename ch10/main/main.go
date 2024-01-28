@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"learngo/ch10/user"
+	_ "learngo/ch09/user"
+	. "learngo/ch10/user"
 )
 
 func main() {
-	c := user.Course{
+	c := Course{
 		Name: "go",
 	}
 
-	fmt.Println(user.GetCourse(c))
+	fmt.Println(GetCourse(c))
 }
