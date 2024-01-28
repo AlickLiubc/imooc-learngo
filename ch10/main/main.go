@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	c := course.Course{
+	c := user.Course{
 		Name: "go",
 	}
 
-	fmt.Println(course.GetCourse(c))
+	fmt.Println(user.GetCourse(c))
 }

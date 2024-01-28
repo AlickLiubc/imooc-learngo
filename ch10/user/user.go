@@ -1,4 +1,4 @@
-package course
+package user
 
 type Course struct {
 	Name string
