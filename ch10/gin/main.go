@@ -8,6 +8,7 @@ import (
 
 // go modules 添加依赖
 // 删除未使用的依赖项
+// go get, go mod ? go install
 func main() {
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
