@@ -24,3 +24,23 @@ func TestAdd2(t *testing.T) {
 		t.Errorf("expect %d, actual %d", 3, re)
 	}
 }
+
+func TestAdd3(t *testing.T) {
+	var dataset = []struct {
+		a   int
+		b   int
+		out int
+	}{
+		{1, 1, 2},
+		{8, 8, 16},
+		{-9, 8, -1},
+		{0, 0, 1},
+	}
+
+	for _, value := range dataset {
+		re := add(value.a, value.b)
+		if re != value.out {
+			t.Errorf("expect:%d, actual:%d", value.out, re)
+		}
+	}
+}
