@@ -40,7 +40,7 @@ func TestAdd3(t *testing.T) {
 	for _, value := range dataset {
 		re := add(value.a, value.b)
 		if re != value.out {
-			t.Errorf("expect:%d, actual:%d", value.out, re)
+			t.Errorf("expect: %d, actual: %d", value.out, re)
 		}
 	}
 }
