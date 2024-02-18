@@ -8,7 +8,7 @@ import (
 // python,java,php 多线程编程，多进程编程，主要问题是耗费内存
 // 内存，线程切换，web2.0 用户级的线程，绿程，轻量级线程，协程 asyncio-python swoole netty
 
-// 内存占用小(2k)，切换快, go语言的协程，go语言但是之后就只有协程可用 goroutine，非常方便
+// 内存占用小(2k)，切换快, go语言的协程，go语言诞生之后就只有协程可用 goroutine，非常方便
 
 func asyncPrint() {
 	for {
@@ -41,10 +41,10 @@ func main() {
 		//	fmt.Println(tmp)
 		//}()
 
-		// 方式2
+		// 方式2 - 更好
 		go func(i int) {
 			fmt.Println(i)
-		}(i)
+		}(i) // 值传递
 	}
 
 	fmt.Println("main goroutine")
