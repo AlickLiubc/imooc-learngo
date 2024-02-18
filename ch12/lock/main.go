@@ -6,6 +6,9 @@ import (
 	"sync/atomic"
 )
 
+/*
+锁-资源竞争
+*/
 var total int32
 var wg sync.WaitGroup
 
