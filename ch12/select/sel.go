@@ -11,6 +11,10 @@ var lock sync.Mutex
 
 func g1() {
 	time.Sleep(time.Second)
+	lock.Lock()
+	defer lock.Unlock()
+
+	done = true
 }
 
 func g2() {
@@ -23,8 +27,8 @@ func g2() {
 }
 
 func main() {
-	// select 类似 switch case语句
-	// 但是select的功能和我们linux里面的select,poll,epoll
+	// select 类似于switch case语句
+	// 但是select的功能和我们linux里面提供的io的select,poll,epoll
 	// select主要作用于多个channel
 
 	// 现在有个需求, 我们现在有2个goroutine都在执行，但是呢，在主的goroutine中，
