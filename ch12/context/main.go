@@ -14,6 +14,10 @@ var wg sync.WaitGroup
 
 // func cpuInfo(stop chan struct{}) {
 func cpuInfo(ctx context.Context) {
+	// 这里能拿到一个请求的id，链路id
+	fmt.Printf("traceid: %s\r\n", ctx.Value("traceid"))
+	// 记录一些日志，这次请求是哪个traceid打印的
+
 	defer wg.Done()
 	for {
 		select {
@@ -43,16 +47,25 @@ func main() {
 	// 如果你的goroutine，函数中，如果希望被控制
 	// 超时、传值，但是我不希望影响原来的接口
 	// 函数传参中第一个参数放ctx
-	ctx, cancel := context.WithCancel(context.Background())
+	// ctx1, cancel := context.WithCancel(context.Background())
+	// ctx2, _ := context.WithCancel(ctx1)
 
-	//var stop = make(chan struct{})
+	// var stop = make(chan struct{})
 
-	go cpuInfo(ctx)
+	// 2. timeout 主动超时
+	ctx, _ := context.WithTimeout(context.Background(), 6*time.Second)
 
-	time.Sleep(6 * time.Second)
-	// stop = true
-	// stop <- struct{}{}
-	cancel()
+	// 3. WithDeadline 在时间点cancel
+	// go cpuInfo(ctx)
+
+	// 4.withValue
+	valueCtx := context.WithValue(ctx, "traceid", "qjw12")
+	go cpuInfo(valueCtx)
+
+	// time.Sleep(6 * time.Second)
+	//// stop = true
+	//// stop <- struct{}{}
+	// cancel()
 	wg.Wait()
 
 	fmt.Println("监控完成")
